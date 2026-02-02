@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Will You Be My Valentine? 💖</title>
+  <title>Hilda 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -13,6 +13,7 @@
       justify-content: center;
       align-items: center;
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
     }
 
     .card {
@@ -33,7 +34,7 @@
     .buttons {
       margin-top: 25px;
       position: relative;
-      height: 100px;
+      height: 120px;
     }
 
     button {
@@ -43,28 +44,30 @@
       border-radius: 8px;
       cursor: pointer;
       position: absolute;
+      transition: all 0.15s ease;
     }
 
     #yesBtn {
       background: #ff4d6d;
       color: white;
-      left: 30px;
+      left: 40px;
     }
 
     #noBtn {
-      background: #adb5bd;
+      background: #6c757d;
       color: white;
-      right: 30px;
+      right: 40px;
     }
 
-    /* Meme modal */
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.65);
       justify-content: center;
       align-items: center;
+      z-index: 10;
     }
 
     .modal-content {
@@ -90,8 +93,8 @@
 <body>
 
   <div class="card">
-    <h1>Hilda 💕</h1>
-    <p>Will you be my Valentine? 🥺🌹</p>
+    <h1>Hilda 🌹</h1>
+    <p>Will you be my Valentine? 🥺❤️</p>
 
     <div class="buttons">
       <button id="yesBtn">Yes 💖</button>
@@ -99,29 +102,51 @@
     </div>
   </div>
 
-  <!-- Meme Popup -->
+  <!-- Meme Modal -->
   <div class="modal" id="memeModal">
     <div class="modal-content">
-      <h2>Yaaay!! 🎉😍</h2>
-      <img src="data:image/jpeg;base64,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" alt="Funny Valentine Meme">
-      <p>You just made my day ❤️</p>
+      <h2>So I was like… 👀🌳</h2>
+      <img src="https://i.imgflip.com/1ur9b0.jpg" alt="Guy behind tree meme">
+      <p>When you said YES 😌❤️</p>
     </div>
   </div>
+
+  <!-- Hidden music -->
+  <iframe
+    id="music"
+    width="0"
+    height="0"
+    src=""
+    allow="autoplay"
+  ></iframe>
 
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
     const modal = document.getElementById("memeModal");
+    const music = document.getElementById("music");
+
+    let noAttempts = 0;
+    const noTexts = ["Almost 😅", "Nope 😂", "Try again", "Nice try 😈", "Still no"];
 
     noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * 250;
-      const y = Math.random() * 60;
+      noAttempts++;
+
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
+      noBtn.style.fontSize = Math.max(10, 18 - noAttempts * 2) + "px";
+      noBtn.textContent = noTexts[Math.floor(Math.random() * noTexts.length)];
     });
 
     yesBtn.addEventListener("click", () => {
       modal.style.display = "flex";
+
+      // Start Ophelia after user interaction
+      music.src =
+        "https://www.youtube.com/embed/pTOC_q0NLTk?autoplay=1&loop=1&playlist=pTOC_q0NLTk";
     });
 
     modal.addEventListener("click", () => {
