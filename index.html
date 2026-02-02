@@ -88,6 +88,13 @@
       from { transform: scale(0.7); }
       to { transform: scale(1); }
     }
+
+    /* Spotify player */
+    #music {
+      display: none;
+      margin-top: 15px;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body>
@@ -100,25 +107,26 @@
       <button id="yesBtn">Yes 💖</button>
       <button id="noBtn">No 🙃</button>
     </div>
+
+    <!-- Spotify appears after YES -->
+    <iframe
+      id="music"
+      width="100%"
+      height="80"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      src="https://open.spotify.com/embed/track/6X5tkbisPtOgQB8clcPPtE">
+    </iframe>
   </div>
 
   <!-- Meme Modal -->
   <div class="modal" id="memeModal">
     <div class="modal-content">
       <h2>Me after you said YES 👀🌳</h2>
-      <img src="meme.jpeg" alt="Guy behind tree meme">
+      <img src="./meme.jpeg" alt="Guy behind tree meme">
       <p>No turning back now 😌❤️</p>
     </div>
   </div>
-
-  <!-- Spotify Music -->
-  <iframe
-    id="music"
-    width="0"
-    height="0"
-    allow="autoplay; encrypted-media"
-    frameborder="0">
-  </iframe>
 
   <script>
     const noBtn = document.getElementById("noBtn");
@@ -149,10 +157,7 @@
 
     yesBtn.addEventListener("click", () => {
       modal.style.display = "flex";
-
-      // 🎵 Spotify song (starts after click)
-      music.src =
-        "https://open.spotify.com/embed/track/6X5tkbisPtOgQB8clcPPtE?autoplay=1";
+      music.style.display = "block";
     });
 
     modal.addEventListener("click", () => {
